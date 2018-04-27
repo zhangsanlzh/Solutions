@@ -1,0 +1,3 @@
+#### 关于未完全限制`pornhub`的漏洞
+
+噢，通过百度。我估计到了原因。如果输入http://pornhub.com，或者http://www.pornhub.com或者pornhub.com或者www.pornhub.com都访问失败。而输入https://pornhub.com或https://www.pornhub.com就可以正常访问。百度得知http和https的区别在于http使用80端口，而https使用443端口。他应该是没有禁用通过443端口访问这个网站。而同测youtube，无论是http或是https都无法访问。限制的原因是中国的防火长城。当输入域名想要访问pornhub.com时，首先查找中国的根域名镜像服务器，无论是www开头的pornhub或是直接pornhub开头的pornhub域名，最终都从镜像记录中查到了这个ip地址。而假如输入的是http开头的pornhub网址，虽然查到了，但是以http开头的pornhub已经被标记，所以就会向用户返回错误的ip地址。而漏洞确是https开头的pornhub没有被标记，因此直接向用户返回了正确的ip地址，用户也就可以正常访问了。也就是说，通过80端口访问这台服务器就不能得到正确ip。而通过443端口就可以。同样的youtube无论怎样都是不能访问的，是因为知道youtube的国内的人比知道pornhub的多。所以记录添加得很精细，一定是做到了万无一失。相反限制pornhub就做得不够精细了。
