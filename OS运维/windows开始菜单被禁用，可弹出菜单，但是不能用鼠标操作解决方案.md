@@ -6,13 +6,13 @@
 
 然后就对重置后的操作系统进行配置。各种卸载，禁用。其中因为神烦每次开机都会出现Cortana进程，认为它浪费内存资源。就这个：
 
-![cortanaProcess](C:\Users\Administrator\Desktop\MyBlogs-ING\windows\images\cortanaProcess.png)
+![cortanaProcess](C:\Users\Administrator\Desktop\MyBlogs-ING\OS运维\images\cortanaProcess.png)
 
 
 
 然后就找到它的文件位置，修改了它的名称，让系统找不到这个文件夹的内容。果然，每次开机都进程列表中再也没有出现Cortana的身影。期间没有任何异常情况。然后有一天，开始菜单毛病了：菜单可以被弹出，但不能用鼠标上面的所有按钮（按钮全部变灰），可用键盘控制操作菜单。
 
-![SysMenuError](C:\Users\Administrator\Desktop\MyBlogs-ING\windows\images\SysMenuError.png)
+![SysMenuError](C:\Users\Administrator\Desktop\MyBlogs-ING\OS运维\images\SysMenuError.png)
 
 
 

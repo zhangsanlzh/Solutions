@@ -4,4 +4,4 @@
 
 然后，找到你要上传的文件（夹），找到要存放的远程站点的目录。拖动它到远程站点格下面的格子里就开始自动上次。
 
-![2018-03-22_193157](C:\Users\Administrator\Desktop\MyBlogs-ING\Server\images\2018-03-22_193157.png)
+![2018-03-22_193157](C:\Users\Administrator\Desktop\MyBlogs-ING\OS运维\images\2018-03-22_193157.png)

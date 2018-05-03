@@ -6,11 +6,11 @@ AllowsTransparency="False"//表示不允许窗体透明
 
 效果是这样的：
 
-![allowstransparency](C:\Users\Administrator\Desktop\MyBlogs-ING\WPF\images\allowstransparency.png)
+![allowstransparency](C:\Users\Administrator\Desktop\MyBlogs-ING\C#\images\allowstransparency.png)
 
 很明显窗体四周有边框包围。若值为True，效果是这样的：
 
-![true](C:\Users\Administrator\Desktop\MyBlogs-ING\WPF\images\true.png)
+![true](C:\Users\Administrator\Desktop\MyBlogs-ING\C#\images\true.png)
 
 
 
@@ -26,4 +26,4 @@ Background="Transparent"
 Background="Beige"
 ```
 
-![2017-12-30_203909](C:\Users\Administrator\Desktop\MyBlogs-ING\WPF\images\BackgroundTransparent.png)
+![BackgroundTransparent](C:\Users\Administrator\Desktop\MyBlogs-ING\C#\images\BackgroundTransparent.png)

@@ -4,11 +4,15 @@
 
 在解决方案资源管理器中`右击，添加，新建项目`，选择`其他项目类型，Setup Project`。就会弹出下面这个对话框。
 
-![2018-03-22_194817](C:\Users\Administrator\Desktop\MyBlogs-ING\Server\images\2018-03-22_194817.png)
+![2018-03-22_194817](C:\Users\Administrator\Desktop\MyBlogs-ING\杂项\images\2018-03-22_194817.png)
 
 项1代表程序安装目录的内容设置；项2代表程序在桌面上的内容设置；项3代表程序在开始菜单栏中的内容设置。
 
-`右击项1,Add,项目输出`,如果还有要用到的文件，如Access数据库了啥的，就继续`右击项1,Add,文件`。以我的项目为例，右击添加为项目输出后是这个样子的。![2018-03-22_195857](C:\Users\Administrator\Desktop\MyBlogs-ING\Server\images\2018-03-22_195857.png)
+`右击项1,Add,项目输出`,如果还有要用到的文件，如Access数据库了啥的，就继续`右击项1,Add,文件`。以我的项目为例，右击添加为项目输出后是这个样子的。
+
+![2018-03-22_195857](C:\Users\Administrator\Desktop\MyBlogs-ING\杂项\images\2018-03-22_195857.png)
+
+
 
 这时，我们右击`主输出 from xxxxx(Active) `项，选择`Create Shortcut to 主输出 from xxxxx(Active)`项。这一步骤的操作是生成快捷方式。
 
