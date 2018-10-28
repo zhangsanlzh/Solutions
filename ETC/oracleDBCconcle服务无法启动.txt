@@ -1,0 +1,18 @@
+解决方法：
+
+在命令行下输入
+  emctl start dbconsole
+提示报错，ORACLE_SID没有定义
+输入
+  set ORACLE_SID=ORCL  (ORCL是我的实例名，也是服务名)
+没有问题，接着继续输入
+  emctl start dbconsole
+提示
+  OC4J Configuration issue.D:oracleproduct10.2.0db_1/oc4j/j2ee/OC4J_DBConsole_192.168.1.103_orcl not found.
+复制一份j2ee下的OC4J_DBConsole_HOSTNAME_orcl文件夹，重命名为OC4J_DBConsole_192.168.1.103_orcl，复制一份db_1下的HOSTNAME_orcl文件夹,重命名为192.168.1.103_orcl。
+最后重新启动dbconsole，服务启动成功
+
+原因：
+
+这个错误原因是因为你的ip是动态获取的，你在安装Oracle时又是连着网的
+系统记录了你当时的ip，部分配置信息用了那个ip，重启后在启动就会出现这个问题。
