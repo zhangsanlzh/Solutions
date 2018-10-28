@@ -1,14 +1,14 @@
 
-# My Blogs
+# Open Solutions
 
-I usually write some blogs about IT technology . This is My personal blog address ,
+人人都可提交使用的`IT`解决方案集合。小至一张截图，大至一篇长文，都可以选择分享到这里。把解决方案汇集起来，让更多人受益。
 
-My Blog address：http://blog.runningqqee.cn
-
-My CSDN Blog address：http://blog.csdn.net/qq_33712555
-
-My GitHub Blog project address：https://github.com/zhangsanlzh/MyBlogs-ING
-
-And I would update them when some new blogs was added .
-
+|   Modules   |             Description              |
+| :---------: | :----------------------------------: |
+|     DB      |              数据库相关              |
+|     ETC     |            无明确分类的项            |
+|  Micro.NET  |             微软.NET相关             |
+|     OS      | 操作系统相关(Windows，Linux，Mac OS) |
+| ScreenShoot |                 截图                 |
+|     Web     |               前端相关               |
 
