@@ -1,7 +1,7 @@
 
 # My Blogs
 
-I usually write some blogs about IT technology . This is My private blog address ,
+I usually write some blogs about IT technology . This is My personal blog address ,
 
 My Blog address：http://blog.runningqqee.cn
 
