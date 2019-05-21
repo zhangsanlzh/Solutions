@@ -10,6 +10,7 @@
 |    Icons    |               各种图标               |
 |  Micro.NET  |             微软.NET相关             |
 |     OS      | 操作系统相关(Windows，Linux，Mac OS) |
+|     Python     |               Python相关               |
 | ScreenShoot |                 截图                 |
 |     Web     |               前端相关               |
 
