@@ -14,6 +14,5 @@
 | ScreenShoot |                 截图                 |
 |     Web     |               前端相关               |
 
-[C# 5s一做任务]: ./Micro.NET/C# 5s一做任务.md
-[]: 
+[C# 5s一做任务](./Micro.NET/C# 5s一做任务.md)
 
