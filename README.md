@@ -17,3 +17,6 @@
 ## Micro.NET
 [C# 5s一做任务](https://github.com/zhangsanlzh/Solutions/blob/master/Micro.NET/C%23%205s一做任务.md)
 
+[Attribute+反射代码示例](https://github.com/zhangsanlzh/Solutions/blob/master/Micro.NET/Attribute%2B反射代码示例.cs)
+
+[C#，Framework与visual studio比较](https://github.com/zhangsanlzh/Solutions/blob/master/Micro.NET/C%23%20Framework%20vs与windows操作系统.md)
