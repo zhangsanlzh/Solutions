@@ -1,5 +1,5 @@
 
-# Open Solutions
+# Solutions
 
 不断增长的IT解决方案合集。包括.NET，Python，Web，操作系统相关的，开发中遇到的问题的解决方案。
 
@@ -14,5 +14,6 @@
 | ScreenShoot |                 截图                 |
 |     Web     |               前端相关               |
 
+## Micro.NET
 [C# 5s一做任务](https://github.com/zhangsanlzh/Solutions/blob/master/Micro.NET/C%23%205s一做任务.md)
 
