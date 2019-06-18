@@ -14,7 +14,7 @@
 |     Web     |               前端相关               |
 
 
-##DB
+## DB
 
 [Oracle用例一则.md](https://github.com/zhangsanlzh/Solutions/blob/master/DB/Oracle%E7%94%A8%E4%BE%8B%E4%B8%80%E5%88%99.md)
 
@@ -27,7 +27,7 @@
 [完全卸载oracle11g.md](https://github.com/zhangsanlzh/Solutions/blob/master/DB/%E5%AE%8C%E5%85%A8%E5%8D%B8%E8%BD%BDoracle11g.md)
 
 
-##ETC
+## ETC
 
 [images](https://github.com/zhangsanlzh/Solutions/tree/master/ETC/images)
 
@@ -106,7 +106,7 @@
 [集中精力干大事.md](https://github.com/zhangsanlzh/Solutions/blob/master/ETC/%E9%9B%86%E4%B8%AD%E7%B2%BE%E5%8A%9B%E5%B9%B2%E5%A4%A7%E4%BA%8B.md)
 
 
-##Icons
+## Icons
 
 [1.png](https://github.com/zhangsanlzh/Solutions/blob/master/Icons/1.png)
 
@@ -227,7 +227,7 @@
 [yellow.png](https://github.com/zhangsanlzh/Solutions/blob/master/Icons/yellow.png)
 
 
-##Micro.NET
+## Micro.NET
 
 [images](https://github.com/zhangsanlzh/Solutions/tree/master/Micro.NET/images)
 
@@ -614,7 +614,7 @@
 [鼠标滑轮上滚下滚事件.md](https://github.com/zhangsanlzh/Solutions/blob/master/Micro.NET/%E9%BC%A0%E6%A0%87%E6%BB%91%E8%BD%AE%E4%B8%8A%E6%BB%9A%E4%B8%8B%E6%BB%9A%E4%BA%8B%E4%BB%B6.md)
 
 
-##OS
+## OS
 
 [images](https://github.com/zhangsanlzh/Solutions/tree/master/OS/images)
 
@@ -677,7 +677,7 @@
 [首次安装后wordPress上传图片问题.md](https://github.com/zhangsanlzh/Solutions/blob/master/OS/%E9%A6%96%E6%AC%A1%E5%AE%89%E8%A3%85%E5%90%8EwordPress%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E9%97%AE%E9%A2%98.md)
 
 
-##Python
+## Python
 
 [Cython编译时出现 error LINK 1158不能运行rc.exe.txt](https://github.com/zhangsanlzh/Solutions/blob/master/Python/Cython%E7%BC%96%E8%AF%91%E6%97%B6%E5%87%BA%E7%8E%B0%20error%20LINK%201158%E4%B8%8D%E8%83%BD%E8%BF%90%E8%A1%8Crc.exe.txt)
 
@@ -700,12 +700,12 @@
 [退出python程序.md](https://github.com/zhangsanlzh/Solutions/blob/master/Python/%E9%80%80%E5%87%BApython%E7%A8%8B%E5%BA%8F.md)
 
 
-##ScreenShoot
+## ScreenShoot
 
 [数据记录策略.png](https://github.com/zhangsanlzh/Solutions/blob/master/ScreenShoot/%E6%95%B0%E6%8D%AE%E8%AE%B0%E5%BD%95%E7%AD%96%E7%95%A5.png)
 
 
-##Web
+## Web
 
 [CSS按钮背景渐变.md](https://github.com/zhangsanlzh/Solutions/blob/master/Web/CSS%E6%8C%89%E9%92%AE%E8%83%8C%E6%99%AF%E6%B8%90%E5%8F%98.md)
 
