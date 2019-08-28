@@ -6,6 +6,7 @@
 | :---------: | :----------------------------------: |
 |     DB      |              数据库相关              |
 |     ETC     |            无明确分类的项            |
+|     Electron     |            Electron相关的项            |
 |    Icons    |               各种图标               |
 |  Micro.NET  |             微软.NET相关             |
 |     OS      | 操作系统相关(Windows，Linux，Mac OS) |
@@ -71,8 +72,6 @@
 
 [作为一名开发人员，我为什么不再打网游.md](https://github.com/zhangsanlzh/Solutions/blob/master/ETC/%E4%BD%9C%E4%B8%BA%E4%B8%80%E5%90%8D%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%EF%BC%8C%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%86%8D%E6%89%93%E7%BD%91%E6%B8%B8.md)
 
-[修改npm的代理.md](https://github.com/zhangsanlzh/Solutions/blob/master/ETC/%E4%BF%AE%E6%94%B9npm%E7%9A%84%E4%BB%A3%E7%90%86.md)
-
 [停止bat 5秒.txt](https://github.com/zhangsanlzh/Solutions/blob/master/ETC/%E5%81%9C%E6%AD%A2bat%205%E7%A7%92.txt)
 
 [关于未完全限制pornhub的漏洞.md](https://github.com/zhangsanlzh/Solutions/blob/master/ETC/%E5%85%B3%E4%BA%8E%E6%9C%AA%E5%AE%8C%E5%85%A8%E9%99%90%E5%88%B6pornhub%E7%9A%84%E6%BC%8F%E6%B4%9E.md)
@@ -91,6 +90,8 @@
 
 [注册ocx控件.md](https://github.com/zhangsanlzh/Solutions/blob/master/ETC/%E6%B3%A8%E5%86%8Cocx%E6%8E%A7%E4%BB%B6.md)
 
+[添加vsCode右键打开.reg](https://github.com/zhangsanlzh/Solutions/blob/master/ETC/%E6%B7%BB%E5%8A%A0vsCode%E5%8F%B3%E9%94%AE%E6%89%93%E5%BC%80.reg)
+
 [环境变量.txt](https://github.com/zhangsanlzh/Solutions/blob/master/ETC/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F.txt)
 
 [磁盘阵列.txt](https://github.com/zhangsanlzh/Solutions/blob/master/ETC/%E7%A3%81%E7%9B%98%E9%98%B5%E5%88%97.txt)
@@ -104,6 +105,21 @@
 [锁表并解除.txt](https://github.com/zhangsanlzh/Solutions/blob/master/ETC/%E9%94%81%E8%A1%A8%E5%B9%B6%E8%A7%A3%E9%99%A4.txt)
 
 [集中精力干大事.md](https://github.com/zhangsanlzh/Solutions/blob/master/ETC/%E9%9B%86%E4%B8%AD%E7%B2%BE%E5%8A%9B%E5%B9%B2%E5%A4%A7%E4%BA%8B.md)
+
+
+## Electron
+
+[Electron渲染进程与主进程交互.md](https://github.com/zhangsanlzh/Solutions/blob/master/Electron/Electron%E6%B8%B2%E6%9F%93%E8%BF%9B%E7%A8%8B%E4%B8%8E%E4%B8%BB%E8%BF%9B%E7%A8%8B%E4%BA%A4%E4%BA%92.md)
+
+[bootstrap progressbar没有动态效果.md](https://github.com/zhangsanlzh/Solutions/blob/master/Electron/bootstrap%20progressbar%E6%B2%A1%E6%9C%89%E5%8A%A8%E6%80%81%E6%95%88%E6%9E%9C.md)
+
+[electron require is not defined.md](https://github.com/zhangsanlzh/Solutions/blob/master/Electron/electron%20require%20is%20not%20defined.md)
+
+[electron引入bootstrap注意.md](https://github.com/zhangsanlzh/Solutions/blob/master/Electron/electron%E5%BC%95%E5%85%A5bootstrap%E6%B3%A8%E6%84%8F.md)
+
+[修改npm源.txt](https://github.com/zhangsanlzh/Solutions/blob/master/Electron/%E4%BF%AE%E6%94%B9npm%E6%BA%90.txt)
+
+[修改npm的代理.md](https://github.com/zhangsanlzh/Solutions/blob/master/Electron/%E4%BF%AE%E6%94%B9npm%E7%9A%84%E4%BB%A3%E7%90%86.md)
 
 
 ## Icons
@@ -368,6 +384,8 @@
 [WPF不同窗体引用同个资源导致前一个窗体资源在窗体中不显示的问题.md](https://github.com/zhangsanlzh/Solutions/blob/master/Micro.NET/WPF%E4%B8%8D%E5%90%8C%E7%AA%97%E4%BD%93%E5%BC%95%E7%94%A8%E5%90%8C%E4%B8%AA%E8%B5%84%E6%BA%90%E5%AF%BC%E8%87%B4%E5%89%8D%E4%B8%80%E4%B8%AA%E7%AA%97%E4%BD%93%E8%B5%84%E6%BA%90%E5%9C%A8%E7%AA%97%E4%BD%93%E4%B8%AD%E4%B8%8D%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98.md)
 
 [WPF为控件四周添加淡淡的阴影效果.md](https://github.com/zhangsanlzh/Solutions/blob/master/Micro.NET/WPF%E4%B8%BA%E6%8E%A7%E4%BB%B6%E5%9B%9B%E5%91%A8%E6%B7%BB%E5%8A%A0%E6%B7%A1%E6%B7%A1%E7%9A%84%E9%98%B4%E5%BD%B1%E6%95%88%E6%9E%9C.md)
+
+[WPF创建ContentTextMenu.txt](https://github.com/zhangsanlzh/Solutions/blob/master/Micro.NET/WPF%E5%88%9B%E5%BB%BAContentTextMenu.txt)
 
 [WPF判断拖拽的是文件还是文件夹.md](https://github.com/zhangsanlzh/Solutions/blob/master/Micro.NET/WPF%E5%88%A4%E6%96%AD%E6%8B%96%E6%8B%BD%E7%9A%84%E6%98%AF%E6%96%87%E4%BB%B6%E8%BF%98%E6%98%AF%E6%96%87%E4%BB%B6%E5%A4%B9.md)
 
@@ -714,5 +732,7 @@
 [CSS禁用滚动条但仍可滚动.md](https://github.com/zhangsanlzh/Solutions/blob/master/Web/CSS%E7%A6%81%E7%94%A8%E6%BB%9A%E5%8A%A8%E6%9D%A1%E4%BD%86%E4%BB%8D%E5%8F%AF%E6%BB%9A%E5%8A%A8.md)
 
 [JS切换图片.md](https://github.com/zhangsanlzh/Solutions/blob/master/Web/JS%E5%88%87%E6%8D%A2%E5%9B%BE%E7%89%87.md)
+
+[引用bootstrap字体图标.md](https://github.com/zhangsanlzh/Solutions/blob/master/Web/%E5%BC%95%E7%94%A8bootstrap%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87.md)
 
 
