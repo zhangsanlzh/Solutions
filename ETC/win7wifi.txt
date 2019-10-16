@@ -1,0 +1,2 @@
+netsh wlan set hostednetwork mode=allow ssid=Test key=a1b2c3d4
+netsh wlan start hostednetwork

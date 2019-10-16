@@ -1,0 +1,12 @@
+2018/12/24 Winform .NET4.0支持2.0的程序集
+
+1、新建App.config.
+
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+    <startup useLegacyV2RuntimeActivationPolicy="true"> 
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.0"/>
+    </startup>
+</configuration>
+
+
