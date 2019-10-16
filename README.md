@@ -8,13 +8,7 @@
 不断增长的IT解决方案合集。包括.NET，Python，Web，操作系统相关的，开发中遇到的问题的解决方案。
 </div>
 
-<div class="center">
-.center {
-  width: auto;
-  display: table;
-  margin-left: auto;
-  margin-right: auto;
-}
+<div margin="0 auto">
 
 |   Modules   |             Description              |
 | :---------: | :----------------------------------: |
