@@ -8,7 +8,8 @@
 不断增长的IT解决方案合集。包括.NET，Python，Web，操作系统相关的，开发中遇到的问题的解决方案。
 </div>
 
-
+<table>
+	
 |   Modules   |             Description              |
 | :---------: | :----------------------------------: |
 |     DB      |              数据库相关              |
@@ -21,9 +22,10 @@
 | ScreenShoot |                 截图                 |
 |     Web     |               前端相关               |
 
+</table>
 <style>
-.markdown-body table{
-	display:"inline-table";
+table{
+display:"inline-table";
 }
 </style>
 
