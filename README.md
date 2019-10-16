@@ -8,7 +8,6 @@
 不断增长的IT解决方案合集。包括.NET，Python，Web，操作系统相关的，开发中遇到的问题的解决方案。
 </div>
 
-<div margin="0 auto">
 
 |   Modules   |             Description              |
 | :---------: | :----------------------------------: |
@@ -22,7 +21,6 @@
 | ScreenShoot |                 截图                 |
 |     Web     |               前端相关               |
 
-</div>
 
 ## DB
 
