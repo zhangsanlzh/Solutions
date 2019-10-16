@@ -1,9 +1,0 @@
- 2019/4/22
- 
- python3以上使用如下命令查看支持的包类型
- import pip._internal; print(pip._internal.pep425tags.get_supported())
-
- python2使用
- import pip; print(pip.pep425tags.get_supported())
-
- 然后下载适合的 whl包进行安装(安装方式：pip install xxx.whl)

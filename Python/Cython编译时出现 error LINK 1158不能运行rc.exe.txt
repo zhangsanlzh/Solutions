@@ -1,3 +1,0 @@
-2019/5/15 Cython编译时出现 error LINK 1158不能运行rc.exe
-
-把 rc.exe rc.dll 复制到 VS目录，如 D:\vs2015\VC\BIN\x86_amd64\
