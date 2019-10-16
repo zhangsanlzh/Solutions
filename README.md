@@ -1,12 +1,15 @@
-<Center>
+<div align="center">
+<img src="https://avatars0.githubusercontent.com/u/24622931?s=60&v=4" alt="logo">
 
-![logo](https://avatars0.githubusercontent.com/u/24622931?s=60&v=4)
+<h1> Solutions </h1>
 
-# Solutions 
-</Center>
+</div>
+
+
 
 不断增长的IT解决方案合集。包括.NET，Python，Web，操作系统相关的，开发中遇到的问题的解决方案。
 
+<div>
 <Center>
 
 |   Modules   |             Description              |
@@ -22,6 +25,7 @@
 |     Web     |               前端相关               |
 
 </Center>
+</div>
 
 ## DB
 
