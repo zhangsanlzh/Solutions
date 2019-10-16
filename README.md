@@ -9,6 +9,12 @@
 </div>
 
 <div class="center">
+.center {
+  width: auto;
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 |   Modules   |             Description              |
 | :---------: | :----------------------------------: |
