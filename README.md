@@ -17,6 +17,8 @@
 
 若要查看具体内容，可访问 [Blog](https://zhangsanlzh.github.io/gh-page/)。
 
+若要查看新项目的源码，请切换至分支`Source`。
+
 
 ## 导览
 
