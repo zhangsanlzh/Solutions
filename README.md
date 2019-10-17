@@ -1,5 +1,7 @@
 <p align="center">
 <img src="https://avatars0.githubusercontent.com/u/24622931?s=60&v=4" alt="logo">
+❤️
+<img src="https://styleguide.travis-ci.com/images/logos/travis-footer-logo-new.svg" alt="logo" width="170">
 </p>
 
 <div align="center">
@@ -7,6 +9,14 @@
 
 不断增长的IT解决方案合集。包括.NET，Python，Web，操作系统相关的，开发中遇到的问题的解决方案。
 </div>
+
+
+## 迁移说明
+
+该项目已不再新增内容。新内容将使用Travis CI自动构建发布至 [gh-page](https://github.com/zhangsanlzh/gh-page)。
+
+若要查看具体内容，可访问 [Blog](https://zhangsanlzh.github.io/gh-page/)。
+
 
 ## 导览
 
