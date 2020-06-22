@@ -11,15 +11,6 @@
 </div>
 
 
-## 迁移说明
-
-该项目已不再新增内容。新内容将使用Travis CI自动构建发布至 [gh-page](https://github.com/zhangsanlzh/gh-page)。
-
-若要查看具体内容，可访问 [Blog](https://zhangsanlzh.github.io/gh-page/)。
-
-若要查看新项目的源码，请切换至分支`Source`。
-
-
 ## 导览
 
 * [DB](https://github.com/zhangsanlzh/Solutions/blob/master/README.md#DB) 数据库相关 
