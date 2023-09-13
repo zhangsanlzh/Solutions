@@ -1,0 +1,34 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:8
+    working_directory: ~/Solutions
+    steps:
+      - checkout
+      # - run:
+      #     command: |
+      #       git clone -b geekrainy https://github.com/geekrainy/hexo-theme-element.git themes/element
+      - restore_cache:
+          keys:
+          - dependencies-{{ checksum "package.json" }}
+          - dependencies-
+      - run:
+          command: yarn
+      - save_cache:
+          paths:
+            - node_modules
+          key: dependencies-{{ checksum "package.json" }}
+      - run:
+          command: |
+            yarn build
+            yarn deploy
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only:
+                - feature_20230913_travis
