@@ -1,0 +1,4 @@
+```sql
+show full processlist;
+```
+
