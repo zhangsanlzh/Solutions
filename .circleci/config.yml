@@ -1,8 +1,7 @@
 version: 2.1
 
 orbs:
-  node: circleci/node@latest
-  yarn: circleci/yarn@latest
+  node: circleci/node@5.1.0
 
 jobs:
   build:
@@ -10,6 +9,8 @@ jobs:
     executor: node/default
     steps:
       - checkout
+      - node/install-packages:
+          pkg-manager: yarn
       # - run:
       #     command: |
       #       git clone -b geekrainy https://github.com/geekrainy/hexo-theme-element.git themes/element
