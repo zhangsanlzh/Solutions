@@ -21,7 +21,7 @@ jobs:
       - run:
           command: |
             yarn
-            touch docs/_build/html/.nojekyll
+            touch public/.nojekyll
       - save_cache:
           paths:
             - node_modules
