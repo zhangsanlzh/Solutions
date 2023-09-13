@@ -21,7 +21,7 @@ jobs:
       - run:
           command: |
             yarn
-            touch public/.nojekyll
+            cp .nojekll public/
       - save_cache:
           paths:
             - node_modules
