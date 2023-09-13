@@ -19,7 +19,9 @@ jobs:
           - dependencies-{{ checksum "package.json" }}
           - dependencies-
       - run:
-          command: yarn
+          command:
+          - yarn
+          - touch docs/_build/html/.nojekyll
       - save_cache:
           paths:
             - node_modules
@@ -28,7 +30,6 @@ jobs:
           command: |
             yarn build
             yarn deploy
-            gh-pages --dist public
 workflows:
   version: 2
   build_and_deploy:
