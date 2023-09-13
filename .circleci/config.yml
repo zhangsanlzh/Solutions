@@ -30,6 +30,8 @@ jobs:
             yarn build
             yarn deploy
             cd public/ && >.nojekll
+            npm install -g --silent gh-pages@2.0.1
+            gh-pages --dotfiles --message "[skip ci] Updates" --dist public
 workflows:
   version: 2
   build_and_deploy:
