@@ -2,7 +2,9 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:latest
+      - image: 
+        - node:latest
+        - yarn:latest
     working_directory: ~/Solutions
     steps:
       - checkout
