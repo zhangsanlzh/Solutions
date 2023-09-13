@@ -30,9 +30,9 @@ jobs:
             yarn build
             yarn deploy
             cd public/ && >.nojekll
-      - add_ssh_keys:
-          fingerprints:
-            - "52:3b:e0:7f:2f:8a:c0:40:57:d7:fd:21:87:07:e1:51"
+      # - add_ssh_keys:
+      #     fingerprints:
+      #       - "52:3b:e0:7f:2f:8a:c0:40:57:d7:fd:21:87:07:e1:51"
       - run:
           command: |
             yarn add gh-pages@2.0.1
