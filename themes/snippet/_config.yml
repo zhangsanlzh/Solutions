@@ -6,7 +6,7 @@
 ## menu
 menu:
   - page: home
-    url: /
+    url: ./
     icon:
   # - page: 前端
   #   url: /categories/前端/
