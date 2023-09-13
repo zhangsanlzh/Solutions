@@ -22,7 +22,7 @@
 <meta name="keywords" content="" />
 
 
-<meta name="description" content="1130 Host is not allowed to connect to mysql解决办法就是mysql user表中对应用户的host字段不是连接服务器的客户端的ip。简单说就是不允许这..." />
+<meta name="description" content="Oracle用例一则1234567891011121314151617181920212223242526272829select t.outpatient_id,		t2.file_no,		..." />
 
 
 <meta name="robots" content="all" />
@@ -160,8 +160,8 @@
     </div>
     
     <div class="post-body post-content">
-        <h1 id="1130-Host-is-not-allowed-to-connect-to-mysql解决办法"><a href="#1130-Host-is-not-allowed-to-connect-to-mysql解决办法" class="headerlink" title="1130 Host is not allowed to connect to mysql解决办法"></a>1130 Host is not allowed to connect to mysql解决办法</h1><p>就是mysql user表中对应用户的host字段不是连接服务器的客户端的ip。简单说就是不允许这个ip连接到mysql服务器。</p>
-<p>解决办法：host设为%，表示允许所有ip地址以此身份连接mysql。或者改为这个ip地址。</p>
+        <h4 id="Oracle用例一则"><a href="#Oracle用例一则" class="headerlink" title="Oracle用例一则"></a>Oracle用例一则</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> t.outpatient_id,</span><br><span class="line">		t2.file_no,</span><br><span class="line">		t3.patient_name,</span><br><span class="line">		to_char(t.datetime_in,<span class="string">&#x27;yyyy-mm-dd&#x27;</span>) <span class="keyword">as</span> datetime_in,</span><br><span class="line">		t4.dept_name,</span><br><span class="line">		t2.topic,</span><br><span class="line">		nvl(t2.print_flag,<span class="number">0</span>) <span class="keyword">as</span> print_flag,</span><br><span class="line">		t2.emr_doc</span><br><span class="line">	<span class="keyword">from</span> table1 t,</span><br><span class="line">		table2 t2,</span><br><span class="line">		table3 t3,</span><br><span class="line">		table4 t4,</span><br><span class="line">		table5 t5,</span><br><span class="line">	<span class="keyword">where</span> t.outpatient_id <span class="operator">=</span>t2.outpatient_id</span><br><span class="line">		<span class="keyword">and</span> t.patient_id<span class="operator">=</span>t3.patient_id</span><br><span class="line">		<span class="keyword">and</span> t2.dept_id<span class="operator">=</span>t4.dept_id</span><br><span class="line">		<span class="keyword">and</span> t.patient_id<span class="operator">=</span>t5.brid</span><br><span class="line">		<span class="keyword">and</span> t5.jzkh<span class="operator">=</span><span class="string">&#x27;2999999&#x27;</span></span><br><span class="line">		<span class="keyword">and</span> to_char(t2.CREATE_DATE_TIME,<span class="string">&#x27;yyyy-mm-dd&#x27;</span>)<span class="operator">&gt;=</span>to_char(to_date(<span class="string">&#x27;2018-06-01&#x27;</span>,<span class="string">&#x27;yyyy-mm-dd&#x27;</span>)<span class="number">-7</span>),<span class="string">&#x27;yyyy-mm-dd&#x27;</span>)</span><br><span class="line">		<span class="keyword">and</span> to_char(t2.CREATE_DATE_TIME,<span class="string">&#x27;yyyy-mm-dd&#x27;</span>)<span class="operator">&gt;</span><span class="string">&#x27;2011-05-01&#x27;</span></span><br><span class="line">		<span class="keyword">order</span> <span class="keyword">by</span> t2.CREATE_DATE_TIME <span class="keyword">desc</span></span><br><span class="line">		</span><br><span class="line">   <span class="keyword">select</span> to_char(sysdate<span class="number">-7</span>,<span class="string">&#x27;yyyy-mm-dd&#x27;</span>) <span class="keyword">from</span> dual;<span class="comment">--查询距离今天7天的时间--将日期格式转为字符格式</span></span><br><span class="line">   </span><br><span class="line">   <span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> t2 </span><br><span class="line">   	<span class="keyword">where</span> t2.outpatient_id<span class="operator">=</span><span class="string">&#x27;98839383738&#x27;</span></span><br><span class="line">   	<span class="keyword">for</span> <span class="keyword">update</span>;<span class="comment">--查询t2表中的数据并可修改</span></span><br><span class="line">   	</span><br><span class="line">   <span class="keyword">select</span> to_date(<span class="string">&#x27;2018-06-01&#x27;</span>,<span class="string">&#x27;yyyy-mm-dd&#x27;</span>)<span class="number">-7</span> <span class="keyword">from</span> dual;<span class="comment">--将字符格式转为日期格式</span></span><br></pre></td></tr></table></figure>
+
 
     </div>
     
@@ -180,8 +180,14 @@
 </article>
 <div class="article-nav prev-next-wrap clearfix">
     
+    <a href="/2023/09/13/1130%20Host%20is%20not%20allowed%20to%20connect%20to%20mysql%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" class="pre-post btn btn-default" title=''>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            </span>
+    </a>
     
-    <a href="/2023/09/13/Oracle%E7%94%A8%E4%BE%8B%E4%B8%80%E5%88%99/" class="next-post btn btn-default" title=''>
+    
+    <a href="/2023/09/13/oracle%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/" class="next-post btn btn-default" title=''>
         <span class="hidden-lg">下一篇</span>
         <span class="hidden-xs">
             </span><i class="fa fa-angle-right fa-fw"></i>
@@ -218,7 +224,7 @@
             Table of Contents
         </h3>
         
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1130-Host-is-not-allowed-to-connect-to-mysql%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="toc-text">1130 Host is not allowed to connect to mysql解决办法</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Oracle%E7%94%A8%E4%BE%8B%E4%B8%80%E5%88%99"><span class="toc-text">Oracle用例一则</span></a></li></ol>
         
     </div>
 </aside>

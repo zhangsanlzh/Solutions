@@ -22,7 +22,7 @@
 <meta name="keywords" content="" />
 
 
-<meta name="description" content="1130 Host is not allowed to connect to mysql解决办法就是mysql user表中对应用户的host字段不是连接服务器的客户端的ip。简单说就是不允许这..." />
+<meta name="description" content="oracle常用操作命令1、创建表空间1234567create tablespace tsp_emr	datafile &#x27;D:\app\zhangsansan\oradata\jhe..." />
 
 
 <meta name="robots" content="all" />
@@ -160,8 +160,32 @@
     </div>
     
     <div class="post-body post-content">
-        <h1 id="1130-Host-is-not-allowed-to-connect-to-mysql解决办法"><a href="#1130-Host-is-not-allowed-to-connect-to-mysql解决办法" class="headerlink" title="1130 Host is not allowed to connect to mysql解决办法"></a>1130 Host is not allowed to connect to mysql解决办法</h1><p>就是mysql user表中对应用户的host字段不是连接服务器的客户端的ip。简单说就是不允许这个ip连接到mysql服务器。</p>
-<p>解决办法：host设为%，表示允许所有ip地址以此身份连接mysql。或者改为这个ip地址。</p>
+        <h4 id="oracle常用操作命令"><a href="#oracle常用操作命令" class="headerlink" title="oracle常用操作命令"></a>oracle常用操作命令</h4><h5 id="1、创建表空间"><a href="#1、创建表空间" class="headerlink" title="1、创建表空间"></a>1、创建表空间</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span>space tsp_emr</span><br><span class="line">	datafile <span class="string">&#x27;D:\app\zhangsansan\oradata\jhemr\emr.dbf&#x27;</span></span><br><span class="line">	size <span class="number">20</span>M</span><br><span class="line">	reuse</span><br><span class="line">	autoextend <span class="keyword">on</span></span><br><span class="line">	next <span class="number">5</span>M</span><br><span class="line">	maxsize unlimited;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="2、创建用户并授权"><a href="#2、创建用户并授权" class="headerlink" title="2、创建用户并授权"></a>2、创建用户并授权</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> emr</span><br><span class="line">	identified <span class="keyword">by</span> emr</span><br><span class="line">	<span class="keyword">default</span> tablespace tsp_emr</span><br><span class="line">	temporary tablespace temp</span><br><span class="line">	quota unlimited <span class="keyword">on</span> tsp_emr;</span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">connect</span>,resource,dba <span class="keyword">to</span> emr;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="3、导出数据库到桌面"><a href="#3、导出数据库到桌面" class="headerlink" title="3、导出数据库到桌面"></a>3、导出数据库到桌面</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exp emr<span class="operator">/</span>emr<span class="variable">@192</span><span class="number">.168</span><span class="number">.2</span><span class="number">.214</span>:<span class="number">1521</span><span class="operator">/</span>emr file<span class="operator">=</span>C:\Users\wangxiaoming\Desktop\emr.dmp</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="4、导入dmp文件到数据库"><a href="#4、导入dmp文件到数据库" class="headerlink" title="4、导入dmp文件到数据库"></a>4、导入dmp文件到数据库</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">imp medrec<span class="operator">/</span>medrec<span class="variable">@localemrdb</span> file<span class="operator">=</span>C:\Users\wangxiaoming\Desktop\medrec.dmp;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="5、登录数据库"><a href="#5、登录数据库" class="headerlink" title="5、登录数据库"></a>5、登录数据库</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlplus emr<span class="operator">/</span>emr 或 sqlplus <span class="operator">/</span>nolog</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="6、级联删除用户所有数据"><a href="#6、级联删除用户所有数据" class="headerlink" title="6、级联删除用户所有数据"></a>6、级联删除用户所有数据</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop user emr cascade;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="7、删除表空间"><a href="#7、删除表空间" class="headerlink" title="7、删除表空间"></a>7、删除表空间</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> tablespace 表空间名称 including contents <span class="keyword">and</span> datafiles;  </span><br></pre></td></tr></table></figure>
+
 
     </div>
     
@@ -180,8 +204,14 @@
 </article>
 <div class="article-nav prev-next-wrap clearfix">
     
+    <a href="/2023/09/13/Oracle%E7%94%A8%E4%BE%8B%E4%B8%80%E5%88%99/" class="pre-post btn btn-default" title=''>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            </span>
+    </a>
     
-    <a href="/2023/09/13/Oracle%E7%94%A8%E4%BE%8B%E4%B8%80%E5%88%99/" class="next-post btn btn-default" title=''>
+    
+    <a href="/2023/09/13/%E5%9C%A8%E6%A0%91%E8%8E%93%E6%B4%BE%E4%B8%8A%E8%BF%90%E8%A1%8Ctauri%E5%BA%94%E7%94%A8/" class="next-post btn btn-default" title=''>
         <span class="hidden-lg">下一篇</span>
         <span class="hidden-xs">
             </span><i class="fa fa-angle-right fa-fw"></i>
@@ -218,7 +248,7 @@
             Table of Contents
         </h3>
         
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1130-Host-is-not-allowed-to-connect-to-mysql%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="toc-text">1130 Host is not allowed to connect to mysql解决办法</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#oracle%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4"><span class="toc-text">oracle常用操作命令</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1%E3%80%81%E5%88%9B%E5%BB%BA%E8%A1%A8%E7%A9%BA%E9%97%B4"><span class="toc-text">1、创建表空间</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2%E3%80%81%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7%E5%B9%B6%E6%8E%88%E6%9D%83"><span class="toc-text">2、创建用户并授权</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3%E3%80%81%E5%AF%BC%E5%87%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%B0%E6%A1%8C%E9%9D%A2"><span class="toc-text">3、导出数据库到桌面</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4%E3%80%81%E5%AF%BC%E5%85%A5dmp%E6%96%87%E4%BB%B6%E5%88%B0%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">4、导入dmp文件到数据库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5%E3%80%81%E7%99%BB%E5%BD%95%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">5、登录数据库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6%E3%80%81%E7%BA%A7%E8%81%94%E5%88%A0%E9%99%A4%E7%94%A8%E6%88%B7%E6%89%80%E6%9C%89%E6%95%B0%E6%8D%AE"><span class="toc-text">6、级联删除用户所有数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#7%E3%80%81%E5%88%A0%E9%99%A4%E8%A1%A8%E7%A9%BA%E9%97%B4"><span class="toc-text">7、删除表空间</span></a></li></ol></li></ol>
         
     </div>
 </aside>
