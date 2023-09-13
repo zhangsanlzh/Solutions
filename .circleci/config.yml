@@ -32,7 +32,7 @@ jobs:
             cd public/ && >.nojekll
       - run:
           command: |
-            sudo npm install -g --silent gh-pages@2.0.1
+            yarn add -g gh-pages@2.0.1
             gh-pages --dotfiles --message "[skip ci] Updates" --dist public
 
 workflows:
