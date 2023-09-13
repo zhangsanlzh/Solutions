@@ -1,10 +1,11 @@
-version: 2
+version: 2.1
+
+orbs:
+  node: circleci/node@latest
+  yarn: circleci/yarn@latest
+
 jobs:
   build:
-    docker:
-      - image: 
-        - node:latest
-        - yarn:latest
     working_directory: ~/Solutions
     steps:
       - checkout
