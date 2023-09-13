@@ -28,6 +28,7 @@ jobs:
           command: |
             yarn build
             yarn deploy
+            gh-pages --dist public
 workflows:
   version: 2
   build_and_deploy:
