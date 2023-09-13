@@ -31,7 +31,7 @@ jobs:
             yarn deploy
             cd public/ && >.nojekll
       - run:
-        command: |
+          command: |
             npm install -g --silent gh-pages@2.0.1
             gh-pages --dotfiles --message "[skip ci] Updates" --dist public
 
