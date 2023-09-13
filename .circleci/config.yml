@@ -33,6 +33,8 @@ jobs:
       - run:
           command: |
             yarn add gh-pages@2.0.1
+            git config --global user.email "844804539@qq.com"
+            git config --global user.name "zhangsanlzh"
             yarn gh-pages --dotfiles --message "[skip ci] Updates" --dist public
 
 workflows:
