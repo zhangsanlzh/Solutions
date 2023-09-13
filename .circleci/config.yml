@@ -33,7 +33,7 @@ jobs:
       - run:
           command: |
             yarn add gh-pages@2.0.1
-            gh-pages --dotfiles --message "[skip ci] Updates" --dist public
+            yarn gh-pages --dotfiles --message "[skip ci] Updates" --dist public
 
 workflows:
   version: 2
