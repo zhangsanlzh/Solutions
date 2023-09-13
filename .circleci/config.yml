@@ -19,9 +19,9 @@ jobs:
           - dependencies-{{ checksum "package.json" }}
           - dependencies-
       - run:
-          command:
-          - yarn
-          - touch docs/_build/html/.nojekyll
+          command: |
+            yarn
+            touch docs/_build/html/.nojekyll
       - save_cache:
           paths:
             - node_modules
