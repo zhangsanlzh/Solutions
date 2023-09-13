@@ -1,1 +1,0 @@
-choice /T 5 /C ync /CS /D y /n
