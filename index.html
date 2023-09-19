@@ -1,683 +1,147 @@
-<!DOCTYPE HTML>
-<html lang="zh-cn en">
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Hexo</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Hexo"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Hexo"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="Hexo"><meta property="og:url" content="https://zhangsanlzh.github.io/Solutions"><meta property="og:site_name" content="Hexo"><meta property="og:image" content="https://zhangsanlzh.github.io/img/og_image.png"><meta property="article:author" content="卢占辉"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://zhangsanlzh.github.io/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhangsanlzh.github.io/Solutions"},"headline":"Hexo","image":["https://zhangsanlzh.github.io/img/og_image.png"],"author":{"@type":"Person","name":"卢占辉"},"publisher":{"@type":"Organization","name":"Hexo","logo":{"@type":"ImageObject","url":"https://zhangsanlzh.github.io/img/logo.svg"}},"description":""}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
 
-<head>
-    <!--Setting-->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <meta http-equiv="Cache-Control" content="no-siteapp">
-    <meta http-equiv="Cache-Control" content="no-transform">
-    <meta name="renderer" content="webkit|ie-comp|ie-stand">
-    <meta name="apple-mobile-web-app-capable" content="Hexo">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="format-detection" content="telephone=no,email=no,adress=no">
-    <meta name="browsermode" content="application">
-    <meta name="screen-orientation" content="portrait">
-    <meta name="theme-version" content="1.3.0">
-    <meta name="root" content="./">
-    <link rel="dns-prefetch" href="https://zhangsanlzh.github.io/Solutions">
-    <!--SEO-->
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
 
-<meta name="keywords" content="" />
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
 
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="Hexo" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item is-active" href="/index.html">Home</a><a class="navbar-item" href="/archives/index.html">Archives</a><a class="navbar-item" href="/categories/index.html">Categories</a><a class="navbar-item" href="/tags/index.html">Tags</a><a class="navbar-item" href="/about/index.html">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Suche" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Gepostet vor&nbsp;<time dateTime="2023-09-19T05:14:33.399Z" title="9/19/2023, 5:14:33 AM">2023-09-19</time></span><span class="level-item">Aktualisiert vor&nbsp;<time dateTime="2023-09-19T05:14:33.399Z" title="9/19/2023, 5:14:33 AM">2023-09-19</time></span><span class="level-item">a few seconds lesen (Über 95 Wörter)</span></div></div><div class="content"><h1 id="1130-Host-is-not-allowed-to-connect-to-mysql解决办法"><a href="#1130-Host-is-not-allowed-to-connect-to-mysql解决办法" class="headerlink" title="1130 Host is not allowed to connect to mysql解决办法"></a>1130 Host is not allowed to connect to mysql解决办法</h1><p>就是mysql user表中对应用户的host字段不是连接服务器的客户端的ip。简单说就是不允许这个ip连接到mysql服务器。</p>
+<p>解决办法：host设为%，表示允许所有ip地址以此身份连接mysql。或者改为这个ip地址。</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Gepostet vor&nbsp;<time dateTime="2023-09-19T05:14:33.399Z" title="9/19/2023, 5:14:33 AM">2023-09-19</time></span><span class="level-item">Aktualisiert vor&nbsp;<time dateTime="2023-09-19T05:14:33.399Z" title="9/19/2023, 5:14:33 AM">2023-09-19</time></span><span class="level-item">a minute lesen (Über 190 Wörter)</span></div></div><div class="content"><h4 id="Oracle用例一则"><a href="#Oracle用例一则" class="headerlink" title="Oracle用例一则"></a>Oracle用例一则</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> t.outpatient_id,</span><br><span class="line">		t2.file_no,</span><br><span class="line">		t3.patient_name,</span><br><span class="line">		to_char(t.datetime_in,<span class="string">&#x27;yyyy-mm-dd&#x27;</span>) <span class="keyword">as</span> datetime_in,</span><br><span class="line">		t4.dept_name,</span><br><span class="line">		t2.topic,</span><br><span class="line">		nvl(t2.print_flag,<span class="number">0</span>) <span class="keyword">as</span> print_flag,</span><br><span class="line">		t2.emr_doc</span><br><span class="line">	<span class="keyword">from</span> table1 t,</span><br><span class="line">		table2 t2,</span><br><span class="line">		table3 t3,</span><br><span class="line">		table4 t4,</span><br><span class="line">		table5 t5,</span><br><span class="line">	<span class="keyword">where</span> t.outpatient_id <span class="operator">=</span>t2.outpatient_id</span><br><span class="line">		<span class="keyword">and</span> t.patient_id<span class="operator">=</span>t3.patient_id</span><br><span class="line">		<span class="keyword">and</span> t2.dept_id<span class="operator">=</span>t4.dept_id</span><br><span class="line">		<span class="keyword">and</span> t.patient_id<span class="operator">=</span>t5.brid</span><br><span class="line">		<span class="keyword">and</span> t5.jzkh<span class="operator">=</span><span class="string">&#x27;2999999&#x27;</span></span><br><span class="line">		<span class="keyword">and</span> to_char(t2.CREATE_DATE_TIME,<span class="string">&#x27;yyyy-mm-dd&#x27;</span>)<span class="operator">&gt;=</span>to_char(to_date(<span class="string">&#x27;2018-06-01&#x27;</span>,<span class="string">&#x27;yyyy-mm-dd&#x27;</span>)<span class="number">-7</span>),<span class="string">&#x27;yyyy-mm-dd&#x27;</span>)</span><br><span class="line">		<span class="keyword">and</span> to_char(t2.CREATE_DATE_TIME,<span class="string">&#x27;yyyy-mm-dd&#x27;</span>)<span class="operator">&gt;</span><span class="string">&#x27;2011-05-01&#x27;</span></span><br><span class="line">		<span class="keyword">order</span> <span class="keyword">by</span> t2.CREATE_DATE_TIME <span class="keyword">desc</span></span><br><span class="line">		</span><br><span class="line">   <span class="keyword">select</span> to_char(sysdate<span class="number">-7</span>,<span class="string">&#x27;yyyy-mm-dd&#x27;</span>) <span class="keyword">from</span> dual;<span class="comment">--查询距离今天7天的时间--将日期格式转为字符格式</span></span><br><span class="line">   </span><br><span class="line">   <span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> t2 </span><br><span class="line">   	<span class="keyword">where</span> t2.outpatient_id<span class="operator">=</span><span class="string">&#x27;98839383738&#x27;</span></span><br><span class="line">   	<span class="keyword">for</span> <span class="keyword">update</span>;<span class="comment">--查询t2表中的数据并可修改</span></span><br><span class="line">   	</span><br><span class="line">   <span class="keyword">select</span> to_date(<span class="string">&#x27;2018-06-01&#x27;</span>,<span class="string">&#x27;yyyy-mm-dd&#x27;</span>)<span class="number">-7</span> <span class="keyword">from</span> dual;<span class="comment">--将字符格式转为日期格式</span></span><br></pre></td></tr></table></figure>
 
-<meta name="description" content="" />
-
-
-<meta name="robots" content="all" />
-<meta name="google" content="all" />
-<meta name="googlebot" content="all" />
-<meta name="verify" content="all" />
-    <!--Title-->
-
-<title>
-    
-    Hexo
-</title>
-
-<link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Gepostet vor&nbsp;<time dateTime="2023-09-19T05:14:33.399Z" title="9/19/2023, 5:14:33 AM">2023-09-19</time></span><span class="level-item">Aktualisiert vor&nbsp;<time dateTime="2023-09-19T05:14:33.399Z" title="9/19/2023, 5:14:33 AM">2023-09-19</time></span><span class="level-item">a few seconds lesen (Über 54 Wörter)</span></div></div><div class="content"><h2 id="mysql����������"><a href="#mysql����������" class="headerlink" title="mysql����������"></a>mysql����������</h2><p>2019&#x2F;10&#x2F;10 </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">TRIGGER</span> if <span class="keyword">EXISTS</span> AutoUpdateTypeText;</span><br><span class="line"></span><br><span class="line">delimiter $$</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TRIGGER</span> AutoUpdateTypeText BEFORE <span class="keyword">UPDATE</span> <span class="keyword">ON</span> tblaccount <span class="keyword">for</span> <span class="keyword">each</span> <span class="type">ROW</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line"></span><br><span class="line">	IF new.FType <span class="operator">=</span> <span class="number">0</span> <span class="keyword">THEN</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">set</span> new.FTypeText<span class="operator">=</span><span class="string">&#x27;һ���û�&#x27;</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">ELSE</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">SET</span> new.FTypeText<span class="operator">=</span><span class="string">&#x27;��Ȩ�û�&#x27;</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">END</span> IF;</span><br><span class="line"></span><br><span class="line"><span class="keyword">END</span> $$</span><br><span class="line"></span><br><span class="line">delimiter ;</span><br></pre></td></tr></table></figure>
 
 
-<link rel="icon" href="./favicon.ico">
-
-    
-
-
-<link rel="stylesheet" href="./css/bootstrap.min.css?rev=3.3.7.css">
-<link rel="stylesheet" href="./css/font-awesome.min.css?rev=4.7.0.css">
-<link rel="stylesheet" href="./css/style.css?rev=@@hash.css">
-
-    
-<div class="hide">
-    <script type="text/javascript">
-    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
-    </script>
-</div>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Gepostet vor&nbsp;<time dateTime="2023-09-19T05:14:33.399Z" title="9/19/2023, 5:14:33 AM">2023-09-19</time></span><span class="level-item">Aktualisiert vor&nbsp;<time dateTime="2023-09-19T05:14:33.399Z" title="9/19/2023, 5:14:33 AM">2023-09-19</time></span><span class="level-item">a minute lesen (Über 157 Wörter)</span></div></div><div class="content"><h4 id="oracle常用操作命令"><a href="#oracle常用操作命令" class="headerlink" title="oracle常用操作命令"></a>oracle常用操作命令</h4><h5 id="1、创建表空间"><a href="#1、创建表空间" class="headerlink" title="1、创建表空间"></a>1、创建表空间</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span>space tsp_emr</span><br><span class="line">	datafile <span class="string">&#x27;D:\app\zhangsansan\oradata\jhemr\emr.dbf&#x27;</span></span><br><span class="line">	size <span class="number">20</span>M</span><br><span class="line">	reuse</span><br><span class="line">	autoextend <span class="keyword">on</span></span><br><span class="line">	next <span class="number">5</span>M</span><br><span class="line">	maxsize unlimited;</span><br></pre></td></tr></table></figure>
 
 
 
-
-    
-
-<meta name="generator" content="Hexo 6.3.0"></head>
-<!--[if lte IE 8]>
-<style>
-    html{ font-size: 1em }
-</style>
-<![endif]-->
-<!--[if lte IE 9]>
-<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
-<![endif]-->
-<body>
-    <header class="main-header"  style="background-image:url(
-    https://hexo-theme-snippet-1251680922.cos.ap-beijing.myqcloud.com/img/banner.jpg)"
-     >
-    <div class="main-header-box">
-        <a class="header-avatar" href="/" title='John Doe'>
-            <img src="./img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
-        </a>
-        <div class="branding">
-            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
-            
-            <h2>
-                xxxx
-            </h2>
-            
-        </div>
-    </div>
-</header>
-    <nav class="main-navigation">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
-                        <span class="sr-only"></span>
-                        <i class="fa fa-bars"></i>
-                    </span>
-                    <a class="navbar-brand" href="https://zhangsanlzh.github.io/Solutions">
-                        Hexo</a>
-                </div>
-                <div class="collapse navbar-collapse" id="main-menu">
-                    <ul class="menu">
-                        
-                        <li role="presentation" class="text-center">
-                            <a href="./"><i class="fa "></i>
-                                Home</a>
-                        </li>
-                        
-                        <li role="presentation" class="text-center">
-                            <a href="/archives/"><i class="fa "></i>
-                                时间轴</a>
-                        </li>
-                        
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</nav>
-    <section class="content-wrap">
-        <div class="container">
-            <div class="row">
-                <main class="col-md-8 main-content ">
-                    
-<div class="carousel">
-    <a href="https://promotion.aliyun.com/ntms/act/qwbk.html?userCode=xs0pypd2" target="_blank">
-        <img src="././img/head-img.jpg" alt="">
-    </a>
-</div>
+<h5 id="2、创建用户并授权"><a href="#2、创建用户并授权" class="headerlink" title="2、创建用户并授权"></a>2、创建用户并授权</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> emr</span><br><span class="line">	identified <span class="keyword">by</span> emr</span><br><span class="line">	<span class="keyword">default</span> tablespace tsp_emr</span><br><span class="line">	temporary tablespace temp</span><br><span class="line">	quota unlimited <span class="keyword">on</span> tsp_emr;</span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">connect</span>,resource,dba <span class="keyword">to</span> emr;</span><br></pre></td></tr></table></figure>
 
 
 
-
-<article class="post">
-    
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="./2023/09/19/1130%20Host%20is%20not%20allowed%20to%20connect%20to%20mysql%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/">
-                    </a>
-            </h1>
-            <div class="post-meta"> &bull;
-                <time class="post-date" datetime="" title="">
-                    2023年09月19日
-                </time>
-            </div>
-        </div>
-        <p class="brief">
-            
-            1130 Host is not allowed to connect to mysql解决办法就是mysql user表中对应用户的host字段不是连接服务器的客户端的ip。简单说就是不允许这个ip连接到mysql服务器。
-解决办法...
-            
-        </p>
-    </div>
-    
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
-    
-    <span class="categories-meta fa-wrap">
-        <i class="fa fa-folder-open-o"></i>
-        
-    </span>
-    
-    
-    <span class="fa-wrap">
-        <i class="fa fa-tags"></i>
-        <span class="tags-meta">
-            
-        </span>
-    </span>
-    
-    
-</div>
-        </div>
-        <div class="post-permalink">
-            <a href="./2023/09/19/1130%20Host%20is%20not%20allowed%20to%20connect%20to%20mysql%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" class="btn btn-default">
-                Read</a>
-        </div>
-    </footer>
-    
-</article>
-
-
-<article class="post">
-    
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="./2023/09/19/mysql%E5%88%9B%E5%BB%BA%E8%A7%A6%E5%8F%91%E5%99%A8/">
-                    </a>
-            </h1>
-            <div class="post-meta"> &bull;
-                <time class="post-date" datetime="" title="">
-                    2023年09月19日
-                </time>
-            </div>
-        </div>
-        <p class="brief">
-            
-            mysql����������2019&amp;#x2F;10&amp;#x2F;10 
-123456789101112131415161718192021drop TRIGGER if EXISTS AutoUpdateTypeText;delim...
-            
-        </p>
-    </div>
-    
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
-    
-    <span class="categories-meta fa-wrap">
-        <i class="fa fa-folder-open-o"></i>
-        
-    </span>
-    
-    
-    <span class="fa-wrap">
-        <i class="fa fa-tags"></i>
-        <span class="tags-meta">
-            
-        </span>
-    </span>
-    
-    
-</div>
-        </div>
-        <div class="post-permalink">
-            <a href="./2023/09/19/mysql%E5%88%9B%E5%BB%BA%E8%A7%A6%E5%8F%91%E5%99%A8/" class="btn btn-default">
-                Read</a>
-        </div>
-    </footer>
-    
-</article>
-
-
-<article class="post">
-    
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="./2023/09/19/Oracle%E7%94%A8%E4%BE%8B%E4%B8%80%E5%88%99/">
-                    </a>
-            </h1>
-            <div class="post-meta"> &bull;
-                <time class="post-date" datetime="" title="">
-                    2023年09月19日
-                </time>
-            </div>
-        </div>
-        <p class="brief">
-            
-            Oracle用例一则1234567891011121314151617181920212223242526272829select t.outpatient_id,		t2.file_no,		t3.patient_name,		to...
-            
-        </p>
-    </div>
-    
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
-    
-    <span class="categories-meta fa-wrap">
-        <i class="fa fa-folder-open-o"></i>
-        
-    </span>
-    
-    
-    <span class="fa-wrap">
-        <i class="fa fa-tags"></i>
-        <span class="tags-meta">
-            
-        </span>
-    </span>
-    
-    
-</div>
-        </div>
-        <div class="post-permalink">
-            <a href="./2023/09/19/Oracle%E7%94%A8%E4%BE%8B%E4%B8%80%E5%88%99/" class="btn btn-default">
-                Read</a>
-        </div>
-    </footer>
-    
-</article>
-
-
-<article class="post">
-    
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="./2023/09/19/oracle%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/">
-                    </a>
-            </h1>
-            <div class="post-meta"> &bull;
-                <time class="post-date" datetime="" title="">
-                    2023年09月19日
-                </time>
-            </div>
-        </div>
-        <p class="brief">
-            
-            oracle常用操作命令1、创建表空间1234567create tablespace tsp_emr	datafile &amp;#x27;D:\app\zhangsansan\oradata\jhemr\emr.dbf&amp;#x27;	siz...
-            
-        </p>
-    </div>
-    
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
-    
-    <span class="categories-meta fa-wrap">
-        <i class="fa fa-folder-open-o"></i>
-        
-    </span>
-    
-    
-    <span class="fa-wrap">
-        <i class="fa fa-tags"></i>
-        <span class="tags-meta">
-            
-        </span>
-    </span>
-    
-    
-</div>
-        </div>
-        <div class="post-permalink">
-            <a href="./2023/09/19/oracle%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/" class="btn btn-default">
-                Read</a>
-        </div>
-    </footer>
-    
-</article>
-
-
-<article class="post">
-    
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="./2023/09/19/plsql%E6%BF%80%E6%B4%BB/">
-                    </a>
-            </h1>
-            <div class="post-meta"> &bull;
-                <time class="post-date" datetime="" title="">
-                    2023年09月19日
-                </time>
-            </div>
-        </div>
-        <p class="brief">
-            
-            plsql�����룺Product Code(��Ʒ���)��4t46t6vydkvsxekkvf3fjnpzy5wbuhphqz
-serial Number(���к�)��601769
-password(����)��xs37...
-            
-        </p>
-    </div>
-    
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
-    
-    <span class="categories-meta fa-wrap">
-        <i class="fa fa-folder-open-o"></i>
-        
-    </span>
-    
-    
-    <span class="fa-wrap">
-        <i class="fa fa-tags"></i>
-        <span class="tags-meta">
-            
-        </span>
-    </span>
-    
-    
-</div>
-        </div>
-        <div class="post-permalink">
-            <a href="./2023/09/19/plsql%E6%BF%80%E6%B4%BB/" class="btn btn-default">
-                Read</a>
-        </div>
-    </footer>
-    
-</article>
-
-
-<article class="post">
-    
-    <div class="post-media">
-        <a href="./2023/09/19/%E5%9C%A8%E6%A0%91%E8%8E%93%E6%B4%BE%E4%B8%8A%E8%BF%90%E8%A1%8Ctauri%E5%BA%94%E7%94%A8/">
-            <img class="img-ajax" src="./img/loading.gif" data-src="././img/1691387680385.png" alt="">
-        </a>
-    </div>
-    
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="./2023/09/19/%E5%9C%A8%E6%A0%91%E8%8E%93%E6%B4%BE%E4%B8%8A%E8%BF%90%E8%A1%8Ctauri%E5%BA%94%E7%94%A8/">
-                    </a>
-            </h1>
-            <div class="post-meta"> &bull;
-                <time class="post-date" datetime="" title="">
-                    2023年09月19日
-                </time>
-            </div>
-        </div>
-        <p class="brief">
-            
-            在树莓派上运行 tauri 应用tauri，是 Rust 编写的界面框架。使用 tauri 将前端应用在本地环境执行。
-经测，tauri 可运行在树莓派环境中。
-1、安装 node
-并配置环境变量，指向 node项目的 bin目录。
-...
-            
-        </p>
-    </div>
-    
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
-    
-    <span class="categories-meta fa-wrap">
-        <i class="fa fa-folder-open-o"></i>
-        
-    </span>
-    
-    
-    <span class="fa-wrap">
-        <i class="fa fa-tags"></i>
-        <span class="tags-meta">
-            
-        </span>
-    </span>
-    
-    
-</div>
-        </div>
-        <div class="post-permalink">
-            <a href="./2023/09/19/%E5%9C%A8%E6%A0%91%E8%8E%93%E6%B4%BE%E4%B8%8A%E8%BF%90%E8%A1%8Ctauri%E5%BA%94%E7%94%A8/" class="btn btn-default">
-                Read</a>
-        </div>
-    </footer>
-    
-</article>
-
-
-<article class="post">
-    
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="./2023/09/19/%E5%AE%8C%E5%85%A8%E5%8D%B8%E8%BD%BDoracle11g/">
-                    </a>
-            </h1>
-            <div class="post-meta"> &bull;
-                <time class="post-date" datetime="" title="">
-                    2023年09月19日
-                </time>
-            </div>
-        </div>
-        <p class="brief">
-            
-            完全卸载oracle11g步骤：1、 开始－＞设置－＞控制面板－＞管理工具－＞服务 停止所有Oracle服务。 
-2、 开始－＞程序－＞Oracle - OraHome81－＞Oracle Installation Products－...
-            
-        </p>
-    </div>
-    
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
-    
-    <span class="categories-meta fa-wrap">
-        <i class="fa fa-folder-open-o"></i>
-        
-    </span>
-    
-    
-    <span class="fa-wrap">
-        <i class="fa fa-tags"></i>
-        <span class="tags-meta">
-            
-        </span>
-    </span>
-    
-    
-</div>
-        </div>
-        <div class="post-permalink">
-            <a href="./2023/09/19/%E5%AE%8C%E5%85%A8%E5%8D%B8%E8%BD%BDoracle11g/" class="btn btn-default">
-                Read</a>
-        </div>
-    </footer>
-    
-</article>
-
-
-<article class="post">
-    
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="./2023/09/19/%E6%9F%A5%E7%9C%8Bmysql%E8%BF%9E%E6%8E%A5%E7%8A%B6%E6%80%81/">
-                    </a>
-            </h1>
-            <div class="post-meta"> &bull;
-                <time class="post-date" datetime="" title="">
-                    2023年09月19日
-                </time>
-            </div>
-        </div>
-        <p class="brief">
-            
-            1show full processlist;
-
-
-            
-        </p>
-    </div>
-    
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
-    
-    <span class="categories-meta fa-wrap">
-        <i class="fa fa-folder-open-o"></i>
-        
-    </span>
-    
-    
-    <span class="fa-wrap">
-        <i class="fa fa-tags"></i>
-        <span class="tags-meta">
-            
-        </span>
-    </span>
-    
-    
-</div>
-        </div>
-        <div class="post-permalink">
-            <a href="./2023/09/19/%E6%9F%A5%E7%9C%8Bmysql%E8%BF%9E%E6%8E%A5%E7%8A%B6%E6%80%81/" class="btn btn-default">
-                Read</a>
-        </div>
-    </footer>
-    
-</article>
+<h5 id="3、导出数据库到桌面"><a href="#3、导出数据库到桌面" class="headerlink" title="3、导出数据库到桌面"></a>3、导出数据库到桌面</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exp emr<span class="operator">/</span>emr<span class="variable">@192</span><span class="number">.168</span><span class="number">.2</span><span class="number">.214</span>:<span class="number">1521</span><span class="operator">/</span>emr file<span class="operator">=</span>C:\Users\wangxiaoming\Desktop\emr.dmp</span><br></pre></td></tr></table></figure>
 
 
 
-                </main>
-                
-                    
-<aside class="col-md-4 sidebar">
-    
-    
-<div class="widget">
-    <h3 class="title">
-        Search
-    </h3>
-    <div id="search-form">
-        <div id="result-mask" class="hide"></div>
-        <div class="search-area">
-            
-            <input id="search-key" type="search" autocomplete="off" placeholder="Search What？">
-            <button type="button" class="search-form-submit" id="search-local">
-                localSearch</button>
-            
-            
-        </div>
-        <div id="result-wrap" class="hide">
-            <div id="search-result"></div>
-        </div>
-        <div class="hide">
-            <template id="search-tpl">
-                <div class="item">
-                    <a href="/{path}" title="{title}">
-                        <div class="title">{title}</div>
-                        <div class="content">{content}</div>
-                    </a>
-                </div>
-            </template>
-        </div>
-    </div>
-</div>
-
-    
-    
-    
-    
-<div class="widget">
-    <h3 class="title">
-        Social
-    </h3>
-    <div class="content social">
-        
-        <a href="//github.com/shenliyang" rel="external nofollow" title="Github" target="_blank">
-            <i class="git fa fa-git"></i>
-        </a>
-        
-    </div>
-</div>
-
-    
-    
-    
-    
-<div class="widget">
-    <h3 class="title">
-        Archives
-    </h3>
-    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="./archives/2023/09/"><i class="fa" aria-hidden="true">2023年09月</i></a><span class="archive-list-count">8</span></li></ul>
-</div>
-
-    
-    
-    
-    
-<div class="widget">
-    <h3 class="title">
-        Friends
-    </h3>
-    <div class="content friends-link">
-        
-        <a href="https://hexo.io/zh-cn/" class="fa" target="_blank">
-            Hexo官网</a>
-        
-    </div>
-</div>
-
-    
-</aside>
-
-                
-            </div>
-        </div>
-    </section>
-    <footer class="main-footer">
-    <div class="container">
-        <div class="row">
-        </div>
-    </div>
-</footer>
-<a id="back-to-top" class="icon-btn hide">
-    <i class="fa fa-chevron-up"></i>
-</a>
-    <div class="copyright">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="busuanzi">
-    
-</div>
-            </div>
-            <div class="col-sm-12">
-                <span>Copyright &copy;
-                    2017
-                    
-                </span> |
-                <span>
-                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
-                </span> |
-                <span>
-                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
-                </span>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<script src="./js/search.js?rev=@@hash.js"></script>
+<h5 id="4、导入dmp文件到数据库"><a href="#4、导入dmp文件到数据库" class="headerlink" title="4、导入dmp文件到数据库"></a>4、导入dmp文件到数据库</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">imp medrec<span class="operator">/</span>medrec<span class="variable">@localemrdb</span> file<span class="operator">=</span>C:\Users\wangxiaoming\Desktop\medrec.dmp;</span><br></pre></td></tr></table></figure>
 
 
 
+<h5 id="5、登录数据库"><a href="#5、登录数据库" class="headerlink" title="5、登录数据库"></a>5、登录数据库</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlplus emr<span class="operator">/</span>emr 或 sqlplus <span class="operator">/</span>nolog</span><br></pre></td></tr></table></figure>
 
 
-<script src="./js/app.js?rev=@@hash.js"></script>
 
-</body>
-</html>
+<h5 id="6、级联删除用户所有数据"><a href="#6、级联删除用户所有数据" class="headerlink" title="6、级联删除用户所有数据"></a>6、级联删除用户所有数据</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop user emr cascade;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="7、删除表空间"><a href="#7、删除表空间" class="headerlink" title="7、删除表空间"></a>7、删除表空间</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> tablespace 表空间名称 including contents <span class="keyword">and</span> datafiles;  </span><br></pre></td></tr></table></figure>
+
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Gepostet vor&nbsp;<time dateTime="2023-09-19T05:14:33.399Z" title="9/19/2023, 5:14:33 AM">2023-09-19</time></span><span class="level-item">Aktualisiert vor&nbsp;<time dateTime="2023-09-19T05:14:33.399Z" title="9/19/2023, 5:14:33 AM">2023-09-19</time></span><span class="level-item">a few seconds lesen (Über 40 Wörter)</span></div></div><div class="content"><h1 id="plsql�����룺"><a href="#plsql�����룺" class="headerlink" title="plsql�����룺"></a>plsql�����룺</h1><p>Product Code(��Ʒ���)��4t46t6vydkvsxekkvf3fjnpzy5wbuhphqz</p>
+<p>serial Number(���к�)��601769</p>
+<p>password(����)��xs374ca</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Gepostet vor&nbsp;<time dateTime="2023-09-19T05:14:33.399Z" title="9/19/2023, 5:14:33 AM">2023-09-19</time></span><span class="level-item">Aktualisiert vor&nbsp;<time dateTime="2023-09-19T05:14:33.399Z" title="9/19/2023, 5:14:33 AM">2023-09-19</time></span><span class="level-item">a minute lesen (Über 185 Wörter)</span></div></div><div class="content"><h1 id="在树莓派上运行-tauri-应用"><a href="#在树莓派上运行-tauri-应用" class="headerlink" title="在树莓派上运行 tauri 应用"></a>在树莓派上运行 tauri 应用</h1><p>tauri，是 Rust 编写的界面框架。使用 tauri 将前端应用在本地环境执行。</p>
+<p>经测，tauri 可运行在树莓派环境中。</p>
+<h3 id="1、安装-node"><a href="#1、安装-node" class="headerlink" title="1、安装 node"></a>1、安装 node</h3><p><img src="/img/1691387680385.png" alt="1691387680385"></p>
+<p>并配置环境变量，指向 node项目的 bin目录。</p>
+<p>安装 yarn</p>
+<p><code>npm install -g yarn</code></p>
+<h3 id="2、安装-tauri-演示项目"><a href="#2、安装-tauri-演示项目" class="headerlink" title="2、安装 tauri 演示项目"></a>2、安装 tauri 演示项目</h3><p><code>yarn create tauri-app</code></p>
+<h3 id="3、编译项目"><a href="#3、编译项目" class="headerlink" title="3、编译项目"></a>3、编译项目</h3><p>先 yarn 配置整个项目</p>
+<p><code>yarn</code></p>
+<p>再执行编译命令</p>
+<p><code>yarn tauri dev</code></p>
+<p>编译过程中，会报各种错误，主要就是库或依赖缺失。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install libglib2.0-dev libgtk3-dev libsoup2.4-dev libjavascriptcoregtk-4.0-dev libwebkit2gtk-4.0-dev</span><br></pre></td></tr></table></figure>
+
+<p>装完依赖再执行编译命令</p>
+<p><code>yarn tauri dev</code></p>
+<p>这样就能运行起来 tauri demo 啦。</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Gepostet vor&nbsp;<time dateTime="2023-09-19T05:14:33.399Z" title="9/19/2023, 5:14:33 AM">2023-09-19</time></span><span class="level-item">Aktualisiert vor&nbsp;<time dateTime="2023-09-19T05:14:33.399Z" title="9/19/2023, 5:14:33 AM">2023-09-19</time></span><span class="level-item">4 minutes lesen (Über 550 Wörter)</span></div></div><div class="content"><h4 id="完全卸载oracle11g步骤："><a href="#完全卸载oracle11g步骤：" class="headerlink" title="完全卸载oracle11g步骤："></a>完全卸载oracle11g步骤：</h4><p>1、 开始－＞设置－＞控制面板－＞管理工具－＞服务 停止所有Oracle服务。 </p>
+<p>2、 开始－＞程序－＞Oracle - OraHome81－＞Oracle Installation Products－＞ Universal Installer，单击“卸载产品”-“全部展开”，选中除“OraDb11g_home1”外的全部目录，删除。 </p>
+<p>5、 运行regedit，选择HKEY_LOCAL_MACHINE\SOFTWARE\ORACLE，按del键删除这个入口。 </p>
+<p>6、 运行regedit，选择HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services，滚动这个列表，删除所有Oracle入口(以oracle或OraWeb开头的键)。 </p>
+<p>7、 运行refedit，HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Eventlog\Application，删除所有Oracle入口。 </p>
+<p>8、 删除HKEY_CLASSES_ROOT目录下所有以Ora、Oracle、Orcl或EnumOra为前缀的键。 </p>
+<p>9、 删除HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\MenuOrder\Start Menu\Programs中所有以oracle开头的键。</p>
+<p> 10、删除HKEY_LOCAL_MACHINE\SOFTWARE\ODBC\ODBCINST.INI中除Microsoft ODBC for Oracle注册表键以外的所有含有Oracle的键。</p>
+<p>11、我的电脑–&gt;属性–&gt;高级–&gt;环境变量,删除环境变量CLASSPATH和PATH中有关Oracle的设定。 12、从桌面上、STARTUP（启动）组、程序菜单中，删除所有有关Oracle的组和图标。 </p>
+<p>13、删除所有与Oracle相关的目录(如果删不掉，重启计算机后再删就可以了)包括：    </p>
+<p>1.C:\Program file\Oracle目录。     </p>
+<p>2.ORACLE_BASE目录(oracle的安装目录)。     			  3.C:\WINDOWS\system32\config\systemprofile\Oracle目录。     </p>
+<p>4.C:\Users\Administrator\Oracle或C:\Documents and Settings\Administrator\Oracle目录。     5.C:\WINDOWS下删除以下文件ORACLE.INI、oradim73.INI、oradim80.INI、oraodbc.ini等等。     6.C:\WINDOWS下的WIN.INI文件中若有[ORACLE]的标记段，删除该段。 </p>
+<p>14、如有必要，删除所有Oracle相关的ODBC的DSN </p>
+<p>15、到事件查看器中，删除Oracle相关的日志 说明： 如果有个别DLL文件无法删除的情况，则不用理会，重新启动，开始新的安装，安装时，选择一个新的目录，则，安装完毕并重新启动后，老的目录及文件就可以删除掉了。 </p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Gepostet vor&nbsp;<time dateTime="2023-09-19T05:14:33.399Z" title="9/19/2023, 5:14:33 AM">2023-09-19</time></span><span class="level-item">Aktualisiert vor&nbsp;<time dateTime="2023-09-19T05:14:33.399Z" title="9/19/2023, 5:14:33 AM">2023-09-19</time></span><span class="level-item">a few seconds lesen (Über 4 Wörter)</span></div></div><div class="content"><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">full</span> processlist;</span><br></pre></td></tr></table></figure>
+
+</div></article></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/../" alt="Luskyle"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Luskyle</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Beijing.China</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Seiten</p><a href="/archives"><p class="title">8</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Kategorien</p><a href="/categories"><p class="title">0</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">0</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/ppoffice" target="_blank" rel="noopener">Folgen</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/ppoffice"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><!--!--><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Letzte Einträge</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-09-19T05:14:33.399Z">2023-09-19</time></p><p class="title"><a href="/2023/09/19/1130%20Host%20is%20not%20allowed%20to%20connect%20to%20mysql%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"> </a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-09-19T05:14:33.399Z">2023-09-19</time></p><p class="title"><a href="/2023/09/19/Oracle%E7%94%A8%E4%BE%8B%E4%B8%80%E5%88%99/"> </a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-09-19T05:14:33.399Z">2023-09-19</time></p><p class="title"><a href="/2023/09/19/mysql%E5%88%9B%E5%BB%BA%E8%A7%A6%E5%8F%91%E5%99%A8/"> </a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-09-19T05:14:33.399Z">2023-09-19</time></p><p class="title"><a href="/2023/09/19/oracle%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/"> </a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-09-19T05:14:33.399Z">2023-09-19</time></p><p class="title"><a href="/2023/09/19/plsql%E6%BF%80%E6%B4%BB/"> </a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archive</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2023/"><span class="level-start"><span class="level-item">2023</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li></ul></div></div></div><!--!--><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">Abonnieren Sie Updates</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Abonnieren"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Abonnieren"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="Hexo" height="28"></a><p class="is-size-7"><span>&copy; 2023 卢占辉</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2023</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Zurück nach oben" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "Diese Website verwendet Cookies, um Ihre Erfahrung zu verbessern.",
+          dismiss: "Verstanden!",
+          allow: "Cookies zulassen",
+          deny: "Ablehnen",
+          link: "Mehr erfahren",
+          policy: "Cookie-Richtlinie",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Tippen Sie etwas..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Tippen Sie etwas...","untitled":"(Ohne Titel)","posts":"Seiten","pages":"Pages","categories":"Kategorien","tags":"Tags"});
+        });</script></body></html>
